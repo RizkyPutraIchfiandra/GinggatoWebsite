@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ginggato's Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      color: #ffffff;
+      background-color: #000;
+    }
+    h1, p {
+      margin: 0;
+    }
+    h1 {
+      font-size: 3rem;
+      color: #ff6600;
+    }
+    p {
+      font-size: 1.2rem;
+    }
+    
+    /* Navbar styles */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background-color: #1a1a1a;
+      padding: 10px 20px;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 20px;
+    }
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #ffffff;
+      text-decoration: none;
+    }
+    
+    /* Burger menu styles */
+    .burger {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+    }
+    .burger div {
+      width: 25px;
+      height: 3px;
+      background-color: #ffffff;
+      transition: 0.3s;
+    }
+    
+    /* Menu items for burger */
+    .nav-menu {
+      display: none;
+      flex-direction: column;
+      background-color: #1a1a1a;
+      position: fixed;
+      top: 50px;
+      right: 0;
+      width: 200px;
+      padding: 20px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+      transition: transform 0.3s ease;
+      transform: translateX(100%); /* Hide menu initially */
+    }
+    .nav-menu.active {
+      display: flex;
+      transform: translateX(0); /* Show menu when active */
+    }
+    .nav-menu a {
+      color: #ffffff;
+      margin: 10px 0;
+      text-decoration: none;
+    }
+    
+    /* Jumbotron and other sections */
+    #home {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      position: relative;
+      margin-top: 50px;
+      overflow: hidden;
+    }
+    
+    /* Blurred background image */
+    #home::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-image: url('https://wallpapercave.com/wp/wp5997701.png');
+      background-size: cover;
+      background-position: center;
+      filter: blur(5px);
+      z-index: 0;
+    }
+    #home div {
+      position: relative;
+      text-align: center;
+      color: #ffffff;
+      z-index: 1;
+      padding: 20px;
+    }
+    
+    /* Social Media Section */
+    #social-media {
+      text-align: center;
+      padding: 20px 0;
+      background-color: #1a1a1a;
+      margin: 50px 0;
+    }
+    .social-media-title {
+      font-size: 1.5rem;
+      color: #ff6600;
+      margin-bottom: 10px;
+    }
+    .social-media-icons {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+    .social-media-icons a img {
+      width: 40px;
+      height: 40px;
+    }
+    
+    /* About Me Section with Background Image */
+    #about {
+      padding: 50px 20px;
+      text-align: center;
+      color: #ffffff;
+      background-image: url('https://wallpapercave.com/wp/wp5997701.png');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      position: relative;
+    }
+    #about::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(0, 0, 0, 0.6);
+      z-index: 0;
+    }
+    #about h2, #about p {
+      position: relative;
+      z-index: 1;
+    }
+    #about h2 {
+      font-size: 2.5rem;
+      color: #ff6600;
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav>
+    <div class="burger" onclick="toggleMenu()">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <a href="#" class="logo">Ginggato's Website</a>
+    <div class="nav-menu" id="navMenu">
+      <a href="#about">About Me</a>
+      <a href="#social-media">Social Media</a>
+    </div>
+  </nav>
+
+  <!-- Jumbotron -->
+  <header id="home">
+    <div>
+      <h1>Ginggato's Home</h1>
+      <p style="font-size: 2rem; margin-bottom: 10px;">Hello There,<br>This is My Website</p>
+      <p style="opacity: 0.8; margin-bottom: 30px;">Programmer - Gamer - Streamer - Freelancer</p>
+      <a href="#about" style="padding: 12px 25px; background-color: #ff6600; color: #ffffff; text-decoration: none; font-weight: bold; border-radius: 5px; transition: background-color 0.3s; margin-top: 20px;">More About Me</a>
+    </div>
+  </header>
+
+  <!-- Social Media Section -->
+  <div id="social-media">
+    <p class="social-media-title">My Social Media</p>
+    <div class="social-media-icons">
+      <a href="https://www.instagram.com/panas_tetapikejam?igsh=MW1iejhuYndoemF4Yg==" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram">
+      </a>
+      <a href="https://twitter.com/PxyRimX" target="_blank">
+        <img src="https://logodownload.org/wp-content/uploads/2014/09/twitter-logo-4.png" alt="Twitter">
+      </a>
+      <a href="https://www.youtube.com/@Ginggato" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/4/42/YouTube_icon_%282013-2017%29.png" alt="YouTube">
+      </a>
+      <a href="https://saweria.co/Ginggato" target="_blank">
+        <img src="https://d1fdloi71mui9q.cloudfront.net/4ks4pCShS4xBHRV9fsAi_Logo-Saweria-Donasi.png" alt="Saweria">
+      </a>
+      <a href="https://discord.com/invite/TgQmBvpgKP" target="_blank">
+        <img src="https://cdn-icons-png.flaticon.com/512/2111/2111370.png" alt="Discord">
+      </a>
+    </div>
+  </div>
+
+  <!-- About Me Section -->
+  <section id="about">
+    <h2>About Me</h2>
+    <p style="max-width: 800px; margin: 0 auto; font-size: 1.2rem; line-height: 1.6; color: #ffffff;">
+      Hello, my name is Ginggato. I’m a passionate programmer, gamer, and streamer who loves to explore the digital world. With years of experience in programming and gaming, I not only develop creative projects but also engage with a community of like-minded enthusiasts. When I’m not coding or gaming, I work as a freelancer, helping clients bring their visions to life. Connect with me through my social media channels, or feel free to reach out if you want to collaborate. Let's make something awesome together!
+    </p>
+  </section>
+
+  <script>
+    function toggleMenu() {
+      const navMenu = document.getElementById('navMenu');
+      navMenu.classList.toggle('active');
+    }
+  </script>
+
+</body>
+</html>
